@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --brightOrange: hsl(31, 77%, 52%);
+    --darkCyan: hsl(184, 100%, 22%);
+    --veryDarkCyan: hsl(179, 100%, 13%);
+    --white: hsla(0, 0%, 100%, 0.75);
+    --lightGray: hsl(0, 0%, 95%);
+  }
+
+
+  body {
+    font: 15px 'Lexend Deca', sans-serif;
+    background-color: var(--lightGray);
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .container {
+    max-width: 1440px;
+  }
+
+  .cards {
+    max-width: 1028px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card {
+    width: 33vw;
+    height: 500px;
+
+    padding: 50px;
+  }
+
+  .card.sedans {
+    background-color: var(--brightOrange);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .card.sedans .card_button {
+    color: var(--brightOrange);
+
+  }
+
+  .card.suv {
+    background-color: var(--darkCyan);
+  }
+
+  .card.suv .card_button {
+    color: var(--darkCyan);
+  }
+
+  .card.luxury {
+    background-color: var(--veryDarkCyan);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .card.luxury .card_button {
+    color: var(--veryDarkCyan);
+  }
+
+  .card.sedans .card_button:hover,
+  .card.luxury .card_button:hover,
+  .card.suv .card_button:hover {
+    color: var(--lightGray);
+
+  }
+
+  .card_content h1 {
+    color: var(--lightGray);
+    text-transform: uppercase;
+
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 40px;
+
+    margin: 25px 0;
+  }
+
+  .card_content p {
+    color: var(--white);
+    line-height: 1.5;
+    max-height: 110px;
+
+  }
+
+  .card_footer {
+    margin-top: 80px;
+  }
+
+  .card_button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 16px 39px;
+    background-color: var(--lightGray);
+    border-radius: 33px;
+    border: 2px solid var(--lightGray);
+    text-align: center;
+    transition: background-color .2s ease-in-out;
+  }
+
+  .card_button:hover {
+    background-color: transparent;
+    border: 2px solid var(--lightGray);
+  }
+
+
+
+  @media(max-width:768px) {
+    body {
+      height: auto;
+    }
+
+    .container {
+      margin: 50px 0;
+    }
+
+    .card.sedans {
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 0;
+    }
+
+    .card.luxury {
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 10px;
+    }
+
+    .cards {
+      flex-direction: column;
+    }
+
+    .card {
+      width: 85vw;
+    }
+  }
+
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+
+    margin: 25px 0;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
